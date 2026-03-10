@@ -1,4 +1,57 @@
 // ========================================
+// Falling Fruits Animation
+// ========================================
+const fruits = [
+    '🍎', '🍐', '🍊', '🍋', '🍌', '🍉', '🍇', '🍓',
+    '🫐', '🍈', '🍒', '🍑', '🥭', '🍍', '🥥', '🥝',
+    '🍅', '🍆', '🥑', '🥦', '🥬', '🥒', '🌶️', '🫑',
+    '🌽', '🥕', '🫒', '🧄', '🧅', '🥔', '🍠', '🥐'
+];
+
+function createFruit() {
+    const container = document.getElementById('fruitsContainer');
+    const fruit = document.createElement('div');
+    fruit.className = 'fruit';
+    fruit.textContent = fruits[Math.floor(Math.random() * fruits.length)];
+
+    // Random position
+    fruit.style.left = Math.random() * 100 + '%';
+
+    // Random size
+    const size = Math.random() * 1.5 + 1.5; // 1.5rem to 3rem
+    fruit.style.fontSize = size + 'rem';
+
+    // Random duration
+    const duration = Math.random() * 5 + 8; // 8s to 13s
+    fruit.style.animationDuration = duration + 's';
+
+    // Random rotation
+    const rotation = Math.random() * 360;
+    fruit.style.setProperty('--rotation', rotation + 'deg');
+
+    container.appendChild(fruit);
+
+    // Remove fruit after animation
+    setTimeout(() => {
+        fruit.remove();
+    }, duration * 1000);
+}
+
+// Start creating fruits
+function startFruits() {
+    // Create initial fruits
+    for (let i = 0; i < 5; i++) {
+        setTimeout(createFruit, i * 200);
+    }
+
+    // Continuously create new fruits
+    setInterval(createFruit, 800);
+}
+
+// Start fruits animation when page loads
+window.addEventListener('load', startFruits);
+
+// ========================================
 // Language Switching
 // ========================================
 let currentLang = 'zh';
