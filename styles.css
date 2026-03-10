@@ -389,6 +389,9 @@ body {
     transform: translateY(-3px);
 }
 
+/* ========================================
+   Q版形象 + 对话框样式
+   ======================================== */
 .hero-image {
     display: flex;
     justify-content: center;
@@ -396,53 +399,92 @@ body {
     position: relative;
 }
 
-.avatar-container {
+.character-container {
     position: relative;
-    width: 380px;
-    height: 380px;
-}
-
-.avatar-placeholder {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: var(--primary-gradient);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.3);
+    gap: 2rem;
+    animation: floatCharacter 3s ease-in-out infinite;
 }
 
-.avatar-image {
+@keyframes floatCharacter {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.character-image {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    filter: drop-shadow(0 20px 40px rgba(102, 126, 234, 0.4));
+}
+
+.q-version-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
+    object-fit: contain;
     display: block;
 }
 
-.avatar-glow {
-    position: absolute;
-    inset: -20px;
-    background: var(--primary-gradient);
-    border-radius: 50%;
-    filter: blur(40px);
-    opacity: 0.5;
-    animation: pulse 3s ease-in-out infinite;
+/* 对话框样式 */
+.speech-bubble {
+    position: relative;
+    background: var(--bg-card);
+    border: 2px solid var(--primary-color);
+    border-radius: 1.5rem;
+    padding: 1.5rem 2rem;
+    max-width: 320px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3),
+                0 0 60px rgba(102, 126, 234, 0.2);
+    animation: bubblePulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
+@keyframes bubblePulse {
     0%, 100% {
-        opacity: 0.5;
-        transform: scale(1);
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3),
+                    0 0 60px rgba(102, 126, 234, 0.2);
     }
     50% {
-        opacity: 0.8;
-        transform: scale(1.05);
+        box-shadow: 0 8px 32px rgba(102, 126, 234, 0.5),
+                    0 0 80px rgba(102, 126, 234, 0.3);
     }
+}
+
+.bubble-content {
+    text-align: center;
+}
+
+.bubble-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.bubble-subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.bubble-tail {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid var(--primary-color);
 }
 
 .scroll-indicator {
