@@ -604,64 +604,112 @@
 
                 <!-- 作品网格 -->
                 <div class="portfolio-grid">
-                    <!-- 作品1 - 可用于图片/小游戏/AI产品 -->
+                    <!-- 作品1 - H5小游戏模板（iframe直接嵌入） -->
                     <div class="portfolio-item">
                         <div class="portfolio-image">
-                            <!-- TODO: 替换内容 -->
-                            <!-- 选项1: 图片作品 -->
-                            <!-- <img src="你的图片URL" alt="作品标题"> -->
+                            <!-- TODO: 替换为你的H5小游戏 -->
+                            <!-- 使用方法：将下面的注释替换为 iframe 代码 -->
+                            <!-- 示例：<iframe src="https://你的游戏网站.com" frameborder="0" allowfullscreen></iframe> -->
 
-                            <!-- 选项2: 小游戏iframe -->
-                            <!-- <iframe src="你的游戏URL" frameborder="0" allowfullscreen></iframe> -->
-
-                            <!-- 选项3: AI产品截图 -->
-                            <!-- <img src="产品截图URL" alt="产品界面"> -->
-
-                            <div class="image-placeholder" data-zh="图片/游戏/产品" data-en="Image/Game/Product">图片/游戏/产品</div>
+                            <div class="game-placeholder">
+                                <i class="fas fa-gamepad"></i>
+                                <span data-zh="H5小游戏区域" data-en="H5 Game Area">H5小游戏区域</span>
+                                <small data-zh="支持iframe嵌入" data-en="Supports iframe embed">支持iframe嵌入</small>
+                            </div>
                         </div>
                         <div class="portfolio-info">
-                            <span class="portfolio-tag" data-zh="AI图片" data-en="AI Image">AI图片</span>
-                            <h4 data-zh="作品标题1" data-en="Work Title 1">作品标题1</h4>
-                            <p data-zh="描述你的作品" data-en="Describe your work">描述你的作品</p>
+                            <span class="portfolio-tag" data-zh="小游戏" data-en="Game">小游戏</span>
+                            <h4 data-zh="游戏标题" data-en="Game Title">游戏标题</h4>
+                            <p data-zh="游戏描述" data-en="Game description">游戏描述</p>
                         </div>
                     </div>
 
-                    <!-- 作品2 -->
-                    <div class="portfolio-item">
+                    <!-- 作品2 - AI产品/网页应用模板（截图+可点击链接） -->
+                    <div class="portfolio-item clickable-portfolio">
                         <div class="portfolio-image">
-                            <!-- TODO: 替换内容 -->
-                            <div class="image-placeholder" data-zh="图片/游戏/产品" data-en="Image/Game/Product">图片/游戏/产品</div>
+                            <!-- TODO: 替换为你的AI产品 -->
+                            <!-- 使用方法：将整个div替换为下面的代码 -->
+                            <!--
+                            <a href="https://你的产品网址.com" target="_blank" class="portfolio-link">
+                                <img src="产品截图.jpg" alt="产品界面">
+                                <div class="link-overlay">
+                                    <span data-zh="点击体验 →" data-en="Try it →">点击体验 →</span>
+                                </div>
+                            </a>
+                            -->
+
+                            <div class="product-placeholder">
+                                <i class="fas fa-laptop-code"></i>
+                                <span data-zh="AI产品区域" data-en="AI Product Area">AI产品区域</span>
+                                <small data-zh="截图+外链" data-en="Screenshot + Link">截图+外链</small>
+                            </div>
                         </div>
                         <div class="portfolio-info">
-                            <span class="portfolio-tag" data-zh="AI图片" data-en="AI Image">AI图片</span>
-                            <h4 data-zh="作品标题2" data-en="Work Title 2">作品标题2</h4>
-                            <p data-zh="描述你的作品" data-en="Describe your work">描述你的作品</p>
+                            <span class="portfolio-tag" data-zh="AI产品" data-en="AI Product">AI产品</span>
+                            <h4 data-zh="产品名称" data-en="Product Name">产品名称</h4>
+                            <p data-zh="产品描述" data-en="Product description">产品描述</p>
                         </div>
                     </div>
 
-                    <!-- 作品3 -->
-                    <div class="portfolio-item">
+                    <!-- 作品3 - GitHub项目模板（截图+GitHub链接+Star） -->
+                    <div class="portfolio-item github-project">
                         <div class="portfolio-image">
-                            <!-- TODO: 替换内容 -->
-                            <div class="video-placeholder" data-zh="视频/游戏/产品" data-en="Video/Game/Product">视频/游戏/产品</div>
+                            <!-- TODO: 替换为你的GitHub项目 -->
+                            <!-- 使用方法：将整个div替换为下面的代码 -->
+                            <!--
+                            <a href="https://github.com/你的用户名/项目名" target="_blank" class="portfolio-link">
+                                <img src="项目截图.jpg" alt="项目预览">
+                                <div class="github-overlay">
+                                    <i class="fab fa-github"></i>
+                                    <span data-zh="查看项目 →" data-en="View Project →">查看项目 →</span>
+                                </div>
+                            </a>
+                            -->
+
+                            <div class="github-placeholder">
+                                <i class="fab fa-github"></i>
+                                <span data-zh="GitHub项目区域" data-en="GitHub Project">GitHub项目区域</span>
+                                <small data-zh="开源代码展示" data-en="Open Source">开源代码展示</small>
+                            </div>
                         </div>
                         <div class="portfolio-info">
-                            <span class="portfolio-tag" data-zh="AI视频" data-en="AI Video">AI视频</span>
-                            <h4 data-zh="作品标题3" data-en="Work Title 3">作品标题3</h4>
-                            <p data-zh="描述你的作品" data-en="Describe your work">描述你的作品</p>
+                            <span class="portfolio-tag" data-zh="GitHub" data-en="GitHub">GitHub</span>
+                            <h4 data-zh="项目名称" data-en="Project Name">项目名称</h4>
+                            <p data-zh="项目描述" data-en="Project description">项目描述</p>
                         </div>
                     </div>
 
-                    <!-- 作品4 -->
+                    <!-- 作品4 - 产品演示视频模板（B站/YouTube等） -->
                     <div class="portfolio-item">
                         <div class="portfolio-image">
-                            <!-- TODO: 替换内容 -->
-                            <div class="video-placeholder" data-zh="视频/游戏/产品" data-en="Video/Game/Product">视频/游戏/产品</div>
+                            <!-- TODO: 替换为你的演示视频 -->
+                            <!-- 使用方法：将下面的注释替换为 iframe 代码 -->
+                            <!--
+                            B站示例：
+                            <iframe src="https://player.bilibili.com/player.html?bvid=你的BV号&page=1"
+                                    scrolling="no" border="0" frameborder="no"
+                                    framespacing="0" allowfullscreen>
+                            </iframe>
+
+                            YouTube示例：
+                            <iframe src="https://www.youtube.com/embed/你的视频ID"
+                                    frameborder="0" allowfullscreen>
+                            </iframe>
+
+                            本地视频：
+                            <video src="演示视频.mp4" poster="封面图.jpg" controls></video>
+                            -->
+
+                            <div class="video-placeholder">
+                                <i class="fas fa-play-circle"></i>
+                                <span data-zh="演示视频区域" data-en="Demo Video">演示视频区域</span>
+                                <small data-zh="支持B站/YouTube/本地视频" data-en="Bilibili/YouTube/Local">支持B站/YouTube/本地视频</small>
+                            </div>
                         </div>
                         <div class="portfolio-info">
-                            <span class="portfolio-tag" data-zh="AI视频" data-en="AI Video">AI视频</span>
-                            <h4 data-zh="作品标题4" data-en="Work Title 4">作品标题4</h4>
-                            <p data-zh="描述你的作品" data-en="Describe your work">描述你的作品</p>
+                            <span class="portfolio-tag" data-zh="产品演示" data-en="Demo">产品演示</span>
+                            <h4 data-zh="演示标题" data-en="Demo Title">演示标题</h4>
+                            <p data-zh="演示描述" data-en="Demo description">演示描述</p>
                         </div>
                     </div>
                 </div>
