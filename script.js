@@ -52,6 +52,60 @@ function startFruits() {
 window.addEventListener('load', startFruits);
 
 // ========================================
+// Click Star Burst Effect
+// ========================================
+const stars = ['⭐', '✨', '💫', '🌟', '⚡', '✴️', '🔯'];
+
+function createStarBurst(x, y) {
+    const container = document.getElementById('fruitsContainer');
+    const starCount = 12; // 每次点击生成的星星数量
+
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star-burst';
+        star.textContent = stars[Math.floor(Math.random() * stars.length)];
+
+        // Set position at click point
+        star.style.left = x + 'px';
+        star.style.top = y + 'px';
+
+        // Random angle and distance
+        const angle = (i / starCount) * 360;
+        const distance = Math.random() * 100 + 50; // 50px to 150px
+        const rotation = Math.random() * 360;
+
+        star.style.setProperty('--angle', angle + 'deg');
+        star.style.setProperty('--distance', distance + 'px');
+        star.style.setProperty('--rotation', rotation + 'deg');
+
+        // Random size
+        const size = Math.random() * 1 + 0.8; // 0.8rem to 1.8rem
+        star.style.fontSize = size + 'rem';
+
+        // Random animation duration
+        const duration = Math.random() * 0.5 + 0.6; // 0.6s to 1.1s
+        star.style.animationDuration = duration + 's';
+
+        container.appendChild(star);
+
+        // Remove star after animation
+        setTimeout(() => {
+            star.remove();
+        }, duration * 1000);
+    }
+}
+
+// Add click event listener to document
+document.addEventListener('click', (e) => {
+    // Don't trigger on navigation, buttons, or links
+    if (e.target.closest('a, button, .nav-menu, .lang-toggle, .contact-card')) {
+        return;
+    }
+
+    createStarBurst(e.clientX, e.clientY);
+});
+
+// ========================================
 // Language Switching
 // ========================================
 let currentLang = 'zh';
