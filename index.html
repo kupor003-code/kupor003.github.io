@@ -27,10 +27,10 @@
         <div class="container">
             <div class="nav-brand">GK</div>
             <ul class="nav-menu">
-                <li><a href="#about" data-zh="关于" data-en="About">关于</a></li>
-                <li><a href="#experience" data-zh="经历" data-en="Experience">经历</a></li>
-                <li><a href="#skills" data-zh="技能" data-en="Skills">技能</a></li>
                 <li><a href="#education" data-zh="教育" data-en="Education">教育</a></li>
+                <li><a href="#experience" data-zh="经历" data-en="Experience">经历</a></li>
+                <li><a href="#about" data-zh="关于" data-en="About">关于</a></li>
+                <li><a href="#skills" data-zh="技能" data-en="Skills">技能</a></li>
                 <li><a href="#contact" data-zh="联系" data-en="Contact">联系</a></li>
             </ul>
             <button class="lang-toggle" id="langToggle">
@@ -104,77 +104,79 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about section" id="about">
+    <!-- Education Section -->
+    <section class="education section" id="education">
         <div class="container">
             <div class="section-header">
-                <p class="section-label" data-zh="关于我" data-en="About Me">关于我</p>
-                <h2 class="section-title" data-zh="数据驱动的AI产品人" data-en="Data-Driven AI Product Manager">数据驱动的AI产品人</h2>
+                <p class="section-label" data-zh="教育背景" data-en="Education">教育背景</p>
+                <h2 class="section-title" data-zh="学术经历" data-en="Academic Background">学术经历</h2>
             </div>
-            <div class="about-content">
-                <p class="about-description" data-zh="我是一名专注于AI领域的产品经理，拥有丰富的AI搜索理解、多模态应用和RAG技术实践经验。擅长通过数据分析和用户研究驱动产品迭代，在美团和WithFeeling.AI的实习经历中，主导了从模型横评到产品落地的完整工作流。" data-en="I am an AI-focused product manager with extensive experience in AI search comprehension, multimodal applications, and RAG technology. Skilled in driving product iterations through data analysis and user research, leading the complete workflow from model evaluation to product deployment during internships at Meituan and WithFeeling.AI.">
-                    我是一名专注于AI领域的产品经理，拥有丰富的AI搜索理解、多模态应用和RAG技术实践经验。擅长通过数据分析和用户研究驱动产品迭代，在美团和WithFeeling.AI的实习经历中，主导了从模型横评到产品落地的完整工作流。
-                </p>
-                <div class="about-highlight">
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <i class="fas fa-brain"></i>
+            <div class="education-timeline">
+                <div class="education-card featured">
+                    <div class="education-badge" data-zh="在读" data-en="Current">在读</div>
+                    <div class="education-header">
+                        <div class="university-logo">
+                            <span data-zh="中国农业大学" data-en="CAU">中国农业大学</span>
                         </div>
-                        <div class="highlight-text">
-                            <h3 data-zh="AI搜索专家" data-en="AI Search Expert">AI搜索专家</h3>
-                            <p data-zh="从模型横评到多模态搜索的完整实践经验" data-en="Complete practical experience from model evaluation to multimodal search">从模型横评到多模态搜索的完整实践经验</p>
-                        </div>
+                        <div class="education-period">2024.09 - 2026.06</div>
                     </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="highlight-text">
-                            <h3 data-zh="数据驱动决策" data-en="Data-Driven Decisions">数据驱动决策</h3>
-                            <p data-zh="通过A/B测试和数据分析优化产品策略" data-en="Optimizing product strategy through A/B testing and data analysis">通过A/B测试和数据分析优化产品策略</p>
-                        </div>
+                    <h3 class="education-major" data-zh="资源利用与植物保护 | 硕士" data-en="Resource Utilization and Plant Protection | Master's">资源利用与植物保护 | 硕士</h3>
+                    <div class="education-achievement">
+                        <i class="fas fa-star"></i>
+                        <span data-zh="GPA: 3.66/4.0 (专业前5%)" data-en="GPA: 3.66/4.0 (Top 5%)">GPA: 3.66/4.0 (专业前5%)</span>
                     </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <i class="fas fa-robot"></i>
+                </div>
+                <div class="education-card">
+                    <div class="education-header">
+                        <div class="university-logo">
+                            <span data-zh="山东农业大学" data-en="SDAU">山东农业大学</span>
                         </div>
-                        <div class="highlight-text">
-                            <h3 data-zh="大模型应用" data-en="LLM Applications">大模型应用</h3>
-                            <p data-zh="精通RAG、多Agent系统等前沿技术" data-en="Proficient in RAG, multi-Agent systems and other cutting-edge technologies">精通RAG、多Agent系统等前沿技术</p>
-                        </div>
+                        <div class="education-period">2018.09 - 2022.06</div>
                     </div>
+                    <h3 class="education-major" data-zh="土地资源管理 | 本科" data-en="Land Resource Management | Bachelor's">土地资源管理 | 本科</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience Section - Horizontal Timeline -->
     <section class="experience section" id="experience">
         <div class="container">
             <div class="section-header">
                 <p class="section-label" data-zh="工作经历" data-en="Work Experience">工作经历</p>
-                <h2 class="section-title" data-zh="我的职业旅程" data-en="My Professional Journey">我的职业旅程</h2>
+                <h2 class="section-title" data-zh="职业旅程" data-en="Professional Journey">职业旅程</h2>
             </div>
-            <div class="timeline">
+
+            <!-- Horizontal Timeline -->
+            <div class="horizontal-timeline">
                 <!-- Meituan -->
-                <div class="timeline-item featured">
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                        <div class="marker-line"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="company-logo">
-                                <!-- TODO: 添加公司Logo -->
-                                <span>美团</span>
+                <div class="timeline-card" data-company="meituan">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="company-info">
+                            <div class="company-icon">
+                                <i class="fas fa-building"></i>
                             </div>
-                            <div class="timeline-date">2025.12 - <span data-zh="至今" data-en="Present">至今</span></div>
+                            <div class="company-name">美团</div>
                         </div>
-                        <h3 class="timeline-title" data-zh="AI策略产品实习生" data-en="AI Strategy Product Intern">AI策略产品实习生</h3>
-                        <p class="timeline-overview" data-zh="在 AI 搜索理解能力升级过程中，负责从模型横评到问题诊断，再到分流模型训练和展示优化的完整工作流，推动搜索系统从单一模型到多模态的智能搜索转型。" data-en="During the AI search comprehension upgrade, responsible for the complete workflow from model evaluation to problem diagnosis, then to routing model training and display optimization, driving the transformation from single-model to multimodal intelligent search.">
-                            在 AI 搜索理解能力升级过程中，负责从模型横评到问题诊断，再到分流模型训练和展示优化的完整工作流，推动搜索系统从单一模型到多模态的智能搜索转型。
+                        <div class="timeline-date">
+                            <span class="date-start">2025.12</span>
+                            <span class="date-separator">—</span>
+                            <span class="date-end" data-zh="至今" data-en="Present">至今</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="position-title" data-zh="AI策略产品实习生" data-en="AI Strategy Product Intern">AI策略产品实习生</h3>
+                        <p class="position-summary" data-zh="负责AI搜索理解能力升级，从模型横评到产品落地的完整工作流" data-en="Responsible for AI search upgrade, complete workflow from model evaluation to product deployment">
+                            负责AI搜索理解能力升级，从模型横评到产品落地的完整工作流
                         </p>
-                        <div class="timeline-projects">
+                        <div class="expand-hint">
+                            <span data-zh="点击查看详情" data-en="Click for details">点击查看详情</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <div class="details-content">
                             <div class="project-block">
                                 <h4>
                                     <i class="fas fa-project-diagram"></i>
@@ -244,45 +246,90 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="project-block">
-                                <h4>
-                                    <i class="fas fa-route"></i>
-                                    <span data-zh="通搜策略探索" data-en="General Search Strategy Exploration">通搜策略探索</span>
-                                </h4>
-                                <div class="project-details">
-                                    <div class="solution-box full-width">
-                                        <ul>
-                                            <li data-zh="产品调研与用户需求分析：通过问卷、访谈和行为数据分析识别用户主要问题" data-en="Product research and user needs analysis: Identified key user issues through surveys, interviews, and behavioral data analysis">产品调研与用户需求分析：通过问卷、访谈和行为数据分析识别用户主要问题</li>
-                                            <li data-zh="设计旅行规划工具Demo，展示个性化推荐、行程规划和社交分享功能" data-en="Designed travel planning tool Demo, showcasing personalized recommendations, itinerary planning, and social sharing features">设计旅行规划工具Demo，展示个性化推荐、行程规划和社交分享功能</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- WithFeeling.AI -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                        <div class="marker-line"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="company-logo">
-                                <span>WithFeeling.AI</span>
+                <div class="timeline-card" data-company="withfeeling">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="company-info">
+                            <div class="company-icon">
+                                <i class="fas fa-robot"></i>
                             </div>
-                            <div class="timeline-date">2025.06 - 2025.12</div>
+                            <div class="company-name">WithFeeling.AI</div>
                         </div>
-                        <h3 class="timeline-title" data-zh="AI产品实习生" data-en="AI Product Intern">AI产品实习生</h3>
-                        <div class="timeline-description">
-                            <ul>
-                                <li data-zh="<strong>Agent工作流优化：</strong>协同算法团队进行工作流重构与产品功能迭代优化，提升任务执行效率与用户操作流畅度" data-en="<strong>Agent Workflow Optimization:</strong> Collaborated with algorithm team to restructure workflows and iterate product features, improving task execution efficiency and user operation smoothness"><strong>Agent工作流优化：</strong>协同算法团队进行工作流重构与产品功能迭代优化，提升任务执行效率与用户操作流畅度</li>
-                                <li data-zh="<strong>数据看板设计：</strong>设计中心Agent数据看板，实时预测用户下一步动作，提升系统智能预测能力" data-en="<strong>Data Dashboard Design:</strong> Designed central Agent data dashboard to predict user next actions in real-time, enhancing system intelligence prediction capability"><strong>数据看板设计：</strong>设计中心Agent数据看板，实时预测用户下一步动作，提升系统智能预测能力</li>
-                                <li data-zh="<strong>Prompt优化：</strong>优化各Agent交互提示词，设计健康状态看板与交互闭环，通过种子用户验证核心链路" data-en="<strong>Prompt Optimization:</strong> Optimized interaction prompts for each Agent, designed health status dashboard and interaction loop, validated core workflows through seed users"><strong>Prompt优化：</strong>优化各Agent交互提示词，设计健康状态看板与交互闭环，通过种子用户验证核心链路</li>
-                                <li data-zh="<strong>留存提升探索：</strong>结合益智游戏探索AI对话产品的持续使用与留存提升方案" data-en="<strong>Retention Enhancement:</strong> Explored continuous usage and retention improvement strategies for AI dialogue products combined with puzzle games"><strong>留存提升探索：</strong>结合益智游戏探索AI对话产品的持续使用与留存提升方案</li>
-                            </ul>
+                        <div class="timeline-date">
+                            <span class="date-start">2025.06</span>
+                            <span class="date-separator">—</span>
+                            <span class="date-end">2025.12</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="position-title" data-zh="AI产品实习生" data-en="AI Product Intern">AI产品实习生</h3>
+                        <p class="position-summary" data-zh="Agent工作流优化、数据看板设计、Prompt调优" data-en="Agent workflow optimization, data dashboard design, Prompt tuning">
+                            Agent工作流优化、数据看板设计、Prompt调优
+                        </p>
+                        <div class="expand-hint">
+                            <span data-zh="点击查看详情" data-en="Click for details">点击查看详情</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <div class="details-content">
+                            <div class="timeline-description">
+                                <ul>
+                                    <li data-zh="<strong>Agent工作流优化：</strong>协同算法团队进行工作流重构与产品功能迭代优化，提升任务执行效率与用户操作流畅度" data-en="<strong>Agent Workflow Optimization:</strong> Collaborated with algorithm team to restructure workflows and iterate product features, improving task execution efficiency and user operation smoothness"><strong>Agent工作流优化：</strong>协同算法团队进行工作流重构与产品功能迭代优化，提升任务执行效率与用户操作流畅度</li>
+                                    <li data-zh="<strong>数据看板设计：</strong>设计中心Agent数据看板，实时预测用户下一步动作，提升系统智能预测能力" data-en="<strong>Data Dashboard Design:</strong> Designed central Agent data dashboard to predict user next actions in real-time, enhancing system intelligence prediction capability"><strong>数据看板设计：</strong>设计中心Agent数据看板，实时预测用户下一步动作，提升系统智能预测能力</li>
+                                    <li data-zh="<strong>Prompt优化：</strong>优化各Agent交互提示词，设计健康状态看板与交互闭环，通过种子用户验证核心链路" data-en="<strong>Prompt Optimization:</strong> Optimized interaction prompts for each Agent, designed health status dashboard and interaction loop, validated core workflows through seed users"><strong>Prompt优化：</strong>优化各Agent交互提示词，设计健康状态看板与交互闭环，通过种子用户验证核心链路</li>
+                                    <li data-zh="<strong>留存提升探索：</strong>结合益智游戏探索AI对话产品的持续使用与留存提升方案" data-en="<strong>Retention Enhancement:</strong> Explored continuous usage and retention improvement strategies for AI dialogue products combined with puzzle games"><strong>留存提升探索：</strong>结合益智游戏探索AI对话产品的持续使用与留存提升方案</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label" data-zh="关于我" data-en="About Me">关于我</p>
+                <h2 class="section-title" data-zh="数据驱动的AI产品人" data-en="Data-Driven AI Product Manager">数据驱动的AI产品人</h2>
+            </div>
+            <div class="about-content">
+                <p class="about-description" data-zh="我是一名专注于AI领域的产品经理，拥有丰富的AI搜索理解、多模态应用和RAG技术实践经验。擅长通过数据分析和用户研究驱动产品迭代，在美团和WithFeeling.AI的实习经历中，主导了从模型横评到产品落地的完整工作流。" data-en="I am an AI-focused product manager with extensive experience in AI search comprehension, multimodal applications, and RAG technology. Skilled in driving product iterations through data analysis and user research, leading the complete workflow from model evaluation to product deployment during internships at Meituan and WithFeeling.AI.">
+                    我是一名专注于AI领域的产品经理，拥有丰富的AI搜索理解、多模态应用和RAG技术实践经验。擅长通过数据分析和用户研究驱动产品迭代，在美团和WithFeeling.AI的实习经历中，主导了从模型横评到产品落地的完整工作流。
+                </p>
+                <div class="about-highlight">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h3 data-zh="AI搜索专家" data-en="AI Search Expert">AI搜索专家</h3>
+                            <p data-zh="从模型横评到多模态搜索的完整实践经验" data-en="Complete practical experience from model evaluation to multimodal search">从模型横评到多模态搜索的完整实践经验</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h3 data-zh="数据驱动决策" data-en="Data-Driven Decisions">数据驱动决策</h3>
+                            <p data-zh="通过A/B测试和数据分析优化产品策略" data-en="Optimizing product strategy through A/B testing and data analysis">通过A/B测试和数据分析优化产品策略</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h3 data-zh="大模型应用" data-en="LLM Applications">大模型应用</h3>
+                            <p data-zh="精通RAG、多Agent系统等前沿技术" data-en="Proficient in RAG, multi-Agent systems and other cutting-edge technologies">精通RAG、多Agent系统等前沿技术</p>
                         </div>
                     </div>
                 </div>
@@ -338,41 +385,6 @@
                         <span class="skill-item">ChatGPT</span>
                         <span class="skill-item">Cursor</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Education Section -->
-    <section class="education section" id="education">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label" data-zh="教育背景" data-en="Education">教育背景</p>
-                <h2 class="section-title" data-zh="学术经历" data-en="Academic Background">学术经历</h2>
-            </div>
-            <div class="education-timeline">
-                <div class="education-card featured">
-                    <div class="education-badge" data-zh="在读" data-en="Current">在读</div>
-                    <div class="education-header">
-                        <div class="university-logo">
-                            <span data-zh="中国农业大学" data-en="CAU">中国农业大学</span>
-                        </div>
-                        <div class="education-period">2024.09 - 2026.06</div>
-                    </div>
-                    <h3 class="education-major" data-zh="资源利用与植物保护 | 硕士" data-en="Resource Utilization and Plant Protection | Master's">资源利用与植物保护 | 硕士</h3>
-                    <div class="education-achievement">
-                        <i class="fas fa-star"></i>
-                        <span data-zh="GPA: 3.66/4.0 (专业前5%)" data-en="GPA: 3.66/4.0 (Top 5%)">GPA: 3.66/4.0 (专业前5%)</span>
-                    </div>
-                </div>
-                <div class="education-card">
-                    <div class="education-header">
-                        <div class="university-logo">
-                            <span data-zh="山东农业大学" data-en="SDAU">山东农业大学</span>
-                        </div>
-                        <div class="education-period">2018.09 - 2022.06</div>
-                    </div>
-                    <h3 class="education-major" data-zh="土地资源管理 | 本科" data-en="Land Resource Management | Bachelor's">土地资源管理 | 本科</h3>
                 </div>
             </div>
         </div>

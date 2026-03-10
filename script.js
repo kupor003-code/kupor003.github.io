@@ -106,6 +106,32 @@ document.addEventListener('click', (e) => {
 });
 
 // ========================================
+// Timeline Card Expand/Collapse
+// ========================================
+const timelineCards = document.querySelectorAll('.timeline-card');
+
+timelineCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+        // Don't expand if clicking on links or buttons inside the card
+        if (e.target.closest('a, button')) {
+            return;
+        }
+
+        // Toggle expanded state
+        card.classList.toggle('expanded');
+
+        // Close other cards when one is opened (optional - remove if you want multiple open)
+        if (card.classList.contains('expanded')) {
+            timelineCards.forEach(otherCard => {
+                if (otherCard !== card && otherCard.classList.contains('expanded')) {
+                    otherCard.classList.remove('expanded');
+                }
+            });
+        }
+    });
+});
+
+// ========================================
 // Language Switching
 // ========================================
 let currentLang = 'zh';
