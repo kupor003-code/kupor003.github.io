@@ -1383,8 +1383,9 @@ body {
    ======================================== */
 .floating-fishing {
     position: fixed;
-    top: 20px;
+    top: 50%;
     left: 20px;
+    transform: translateY(-50%);
     z-index: 999;
 }
 
@@ -1415,17 +1416,19 @@ body {
     margin-top: 0.5rem;
     text-align: center;
     color: var(--text-primary);
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 600;
     background: var(--bg-card);
-    padding: 0.25rem 0.6rem;
-    border-radius: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     white-space: nowrap;
-    opacity: 0.9;
+    opacity: 0.85;
     transition: var(--transition-base);
+    position: relative;
+    z-index: 1;
 }
 
 .fishing-label:hover {
@@ -1435,8 +1438,8 @@ body {
 
 .mini-fishing-game {
     position: absolute;
-    top: 70px;
-    left: 0;
+    top: 0;
+    left: 80px;
     width: 300px;
     background: var(--bg-card);
     border: 2px solid var(--glass-border);
@@ -2069,14 +2072,15 @@ body {
     }
 
     .floating-fishing {
-        top: 20px;
+        top: 50%;
         left: 20px;
+        transform: translateY(-50%);
     }
 
     .mini-fishing-game {
         width: 280px;
-        top: 70px;
-        left: 0;
+        top: 0;
+        left: 80px;
     }
 }
 
