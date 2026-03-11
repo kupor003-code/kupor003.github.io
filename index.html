@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Falling Fruits Container -->
+    <div class="fruits-container" id="fruitsContainer"></div>
+
     <!-- Animated Background -->
     <div class="bg-animation">
         <div class="gradient-orb orb-1"></div>
@@ -24,10 +27,11 @@
         <div class="container">
             <div class="nav-brand">GK</div>
             <ul class="nav-menu">
-                <li><a href="#about" data-zh="关于" data-en="About">关于</a></li>
-                <li><a href="#experience" data-zh="经历" data-en="Experience">经历</a></li>
-                <li><a href="#skills" data-zh="技能" data-en="Skills">技能</a></li>
                 <li><a href="#education" data-zh="教育" data-en="Education">教育</a></li>
+                <li><a href="#experience" data-zh="经历" data-en="Experience">经历</a></li>
+                <li><a href="#about" data-zh="关于" data-en="About">关于</a></li>
+                <li><a href="#skills" data-zh="技能" data-en="Skills">技能</a></li>
+                <li><a href="#ai-tools" data-zh="AI工具" data-en="AI Tools">AI工具</a></li>
                 <li><a href="#contact" data-zh="联系" data-en="Contact">联系</a></li>
             </ul>
             <button class="lang-toggle" id="langToggle">
@@ -46,15 +50,21 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="hero-subtitle" data-zh="AI产品经理" data-en="AI Product Manager">
-                        AI产品经理
+                    <p class="hero-subtitle" data-zh="产品经理 | 数据驱动 | AI探索者" data-en="Product Manager | Data-Driven | AI Explorer">
+                        产品经理 | 数据驱动 | AI探索者
                     </p>
-                    <h1 class="hero-title" data-zh="葛尔康" data-en="Gan Erkang">
+                    <h1 class="hero-title" data-zh="葛尔康" data-en="葛尔康">
                         葛尔康
                     </h1>
-                    <p class="hero-description" data-zh="专注于AI搜索、多模态应用与产品策略 | 中国农业大学硕士在读" data-en="Focused on AI Search, Multimodal Applications & Product Strategy | Master's Student at CAU">
-                        专注于AI搜索、多模态应用与产品策略 | 中国农业大学硕士在读
+                    <p class="hero-description" data-zh="擅长用户研究、数据分析与产品策略，专注AI搜索与多模态应用的产品落地 | 中国农业大学硕士" data-en="Expert in user research, data analysis & product strategy, focused on AI search & multimodal applications | Master's at CAU">
+                        擅长用户研究、数据分析与产品策略，专注AI搜索与多模态应用的产品落地 | 中国农业大学硕士
                     </p>
+                    <div class="hero-tags">
+                        <span class="tag-item" data-zh="用户洞察" data-en="User Insights">用户洞察</span>
+                        <span class="tag-item" data-zh="数据驱动" data-en="Data-Driven">数据驱动</span>
+                        <span class="tag-item" data-zh="产品策略" data-en="Product Strategy">产品策略</span>
+                        <span class="tag-item" data-zh="AI应用" data-en="AI Applications">AI应用</span>
+                    </div>
                     <div class="hero-info">
                         <div class="info-item">
                             <i class="fas fa-phone"></i>
@@ -80,12 +90,17 @@
                     </div>
                 </div>
                 <div class="hero-image">
-                    <div class="avatar-container">
-                        <!-- TODO: 添加个人头像 -->
-                        <div class="avatar-placeholder">
-                            <span data-zh="GE" data-en="GE">GE</span>
+                    <div class="character-container">
+                        <div class="character-image">
+                            <img src="生成Q版形象.png" alt="葛尔康" class="q-version-img">
                         </div>
-                        <div class="avatar-glow"></div>
+                        <div class="speech-bubble">
+                            <div class="bubble-content">
+                                <p class="bubble-text" data-zh="用产品思维，创造用户价值 💡" data-en="Creating User Value with Product Thinking 💡">用产品思维，创造用户价值 💡</p>
+                                <p class="bubble-subtitle" data-zh="让技术落地，让数据说话" data-en="Make Tech Work, Let Data Speak">让技术落地，让数据说话</p>
+                            </div>
+                            <div class="bubble-tail"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -94,79 +109,123 @@
             <span data-zh="向下滚动" data-en="Scroll Down">向下滚动</span>
             <div class="scroll-arrow"></div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about section" id="about">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-label" data-zh="关于我" data-en="About Me">关于我</p>
-                <h2 class="section-title" data-zh="数据驱动的AI产品人" data-en="Data-Driven AI Product Manager">数据驱动的AI产品人</h2>
+        <!-- Floating AI Chat Widget -->
+        <div class="floating-chat-widget" id="floatingChatWidget">
+            <div class="chat-widget-header" id="chatWidgetHeader">
+                <div class="widget-title">
+                    <i class="fas fa-robot"></i>
+                    <span data-zh="AI问答" data-en="AI Chat">AI问答</span>
+                </div>
+                <div class="widget-controls">
+                    <button class="widget-btn" id="minimizeChat" title="最小化">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="widget-btn" id="closeChat" title="关闭">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
             </div>
-            <div class="about-content">
-                <p class="about-description" data-zh="我是一名专注于AI领域的产品经理，拥有丰富的AI搜索理解、多模态应用和RAG技术实践经验。擅长通过数据分析和用户研究驱动产品迭代，在美团和WithFeeling.AI的实习经历中，主导了从模型横评到产品落地的完整工作流。" data-en="I am an AI-focused product manager with extensive experience in AI search comprehension, multimodal applications, and RAG technology. Skilled in driving product iterations through data analysis and user research, leading the complete workflow from model evaluation to product deployment during internships at Meituan and WithFeeling.AI.">
-                    我是一名专注于AI领域的产品经理，拥有丰富的AI搜索理解、多模态应用和RAG技术实践经验。擅长通过数据分析和用户研究驱动产品迭代，在美团和WithFeeling.AI的实习经历中，主导了从模型横评到产品落地的完整工作流。
-                </p>
-                <div class="about-highlight">
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div class="highlight-text">
-                            <h3 data-zh="AI搜索专家" data-en="AI Search Expert">AI搜索专家</h3>
-                            <p data-zh="从模型横评到多模态搜索的完整实践经验" data-en="Complete practical experience from model evaluation to multimodal search">从模型横评到多模态搜索的完整实践经验</p>
-                        </div>
+
+            <div class="chat-widget-body" id="chatWidgetBody">
+                <div class="widget-messages" id="widgetMessages">
+                    <div class="widget-welcome">
+                        <i class="fas fa-sparkles"></i>
+                        <p data-zh="嗨！我可以基于葛尔康的简历回答你的问题" data-en="Hi! I can answer questions about Ge Erkang's resume">嗨！我可以基于葛尔康的简历回答你的问题</p>
                     </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <div class="highlight-text">
-                            <h3 data-zh="数据驱动决策" data-en="Data-Driven Decisions">数据驱动决策</h3>
-                            <p data-zh="通过A/B测试和数据分析优化产品策略" data-en="Optimizing product strategy through A/B testing and data analysis">通过A/B测试和数据分析优化产品策略</p>
-                        </div>
-                    </div>
-                    <div class="highlight-item">
-                        <div class="highlight-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <div class="highlight-text">
-                            <h3 data-zh="大模型应用" data-en="LLM Applications">大模型应用</h3>
-                            <p data-zh="精通RAG、多Agent系统等前沿技术" data-en="Proficient in RAG, multi-Agent systems and other cutting-edge technologies">精通RAG、多Agent系统等前沿技术</p>
-                        </div>
-                    </div>
+                </div>
+
+                <div class="widget-input-area">
+                    <input type="text" id="widgetChatInput" class="widget-input"
+                           data-zh-placeholder="问我任何问题..." data-en-placeholder="Ask me anything..."
+                           placeholder="问我任何问题...">
+                    <button id="widgetSendBtn" class="widget-send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+
+                <div class="widget-quick-questions" id="quickQuestions">
+                    <span class="quick-question" data-zh="你的技能？" data-en="Your skills?">你的技能？</span>
+                    <span class="quick-question" data-zh="工作经验" data-en="Experience">工作经验</span>
+                    <span class="quick-question" data-zh="联系方式" data-en="Contact">联系方式</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Education Section -->
+    <section class="education section" id="education">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label" data-zh="教育背景" data-en="Education">教育背景</p>
+                <h2 class="section-title" data-zh="学术经历" data-en="Academic Background">学术经历</h2>
+            </div>
+            <div class="education-timeline">
+                <div class="education-card featured">
+                    <div class="education-badge" data-zh="在读" data-en="Current">在读</div>
+                    <div class="education-header">
+                        <div class="university-logo">
+                            <span data-zh="中国农业大学" data-en="CAU">中国农业大学</span>
+                        </div>
+                        <div class="education-period">2024.09 - 2026.06</div>
+                    </div>
+                    <h3 class="education-major" data-zh="资源利用与植物保护 | 硕士" data-en="Resource Utilization and Plant Protection | Master's">资源利用与植物保护 | 硕士</h3>
+                    <div class="education-achievement">
+                        <i class="fas fa-star"></i>
+                        <span data-zh="GPA: 3.66/4.0 (专业前5%)" data-en="GPA: 3.66/4.0 (Top 5%)">GPA: 3.66/4.0 (专业前5%)</span>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div class="education-header">
+                        <div class="university-logo">
+                            <span data-zh="山东农业大学" data-en="SDAU">山东农业大学</span>
+                        </div>
+                        <div class="education-period">2018.09 - 2022.06</div>
+                    </div>
+                    <h3 class="education-major" data-zh="土地资源管理 | 本科" data-en="Land Resource Management | Bachelor's">土地资源管理 | 本科</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section - Horizontal Timeline -->
     <section class="experience section" id="experience">
         <div class="container">
             <div class="section-header">
                 <p class="section-label" data-zh="工作经历" data-en="Work Experience">工作经历</p>
-                <h2 class="section-title" data-zh="我的职业旅程" data-en="My Professional Journey">我的职业旅程</h2>
+                <h2 class="section-title" data-zh="职业旅程" data-en="Professional Journey">职业旅程</h2>
             </div>
-            <div class="timeline">
+
+            <!-- Horizontal Timeline -->
+            <div class="horizontal-timeline">
                 <!-- Meituan -->
-                <div class="timeline-item featured">
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                        <div class="marker-line"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="company-logo">
-                                <!-- TODO: 添加公司Logo -->
-                                <span>美团</span>
+                <div class="timeline-card" data-company="meituan">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="company-info">
+                            <div class="company-icon">
+                                <i class="fas fa-building"></i>
                             </div>
-                            <div class="timeline-date">2025.12 - <span data-zh="至今" data-en="Present">至今</span></div>
+                            <div class="company-name">美团</div>
                         </div>
-                        <h3 class="timeline-title" data-zh="AI策略产品实习生" data-en="AI Strategy Product Intern">AI策略产品实习生</h3>
-                        <p class="timeline-overview" data-zh="在 AI 搜索理解能力升级过程中，负责从模型横评到问题诊断，再到分流模型训练和展示优化的完整工作流，推动搜索系统从单一模型到多模态的智能搜索转型。" data-en="During the AI search comprehension upgrade, responsible for the complete workflow from model evaluation to problem diagnosis, then to routing model training and display optimization, driving the transformation from single-model to multimodal intelligent search.">
-                            在 AI 搜索理解能力升级过程中，负责从模型横评到问题诊断，再到分流模型训练和展示优化的完整工作流，推动搜索系统从单一模型到多模态的智能搜索转型。
+                        <div class="timeline-date">
+                            <span class="date-start">2025.12</span>
+                            <span class="date-separator">—</span>
+                            <span class="date-end" data-zh="至今" data-en="Present">至今</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="position-title" data-zh="AI策略产品实习生" data-en="AI Strategy Product Intern">AI策略产品实习生</h3>
+                        <p class="position-summary" data-zh="负责AI搜索理解能力升级，从模型横评到产品落地的完整工作流" data-en="Responsible for AI search upgrade, complete workflow from model evaluation to product deployment">
+                            负责AI搜索理解能力升级，从模型横评到产品落地的完整工作流
                         </p>
-                        <div class="timeline-projects">
+                        <div class="expand-hint">
+                            <span data-zh="点击查看详情" data-en="Click for details">点击查看详情</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <div class="details-content">
                             <div class="project-block">
                                 <h4>
                                     <i class="fas fa-project-diagram"></i>
@@ -236,45 +295,90 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="project-block">
-                                <h4>
-                                    <i class="fas fa-route"></i>
-                                    <span data-zh="通搜策略探索" data-en="General Search Strategy Exploration">通搜策略探索</span>
-                                </h4>
-                                <div class="project-details">
-                                    <div class="solution-box full-width">
-                                        <ul>
-                                            <li data-zh="产品调研与用户需求分析：通过问卷、访谈和行为数据分析识别用户主要问题" data-en="Product research and user needs analysis: Identified key user issues through surveys, interviews, and behavioral data analysis">产品调研与用户需求分析：通过问卷、访谈和行为数据分析识别用户主要问题</li>
-                                            <li data-zh="设计旅行规划工具Demo，展示个性化推荐、行程规划和社交分享功能" data-en="Designed travel planning tool Demo, showcasing personalized recommendations, itinerary planning, and social sharing features">设计旅行规划工具Demo，展示个性化推荐、行程规划和社交分享功能</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- WithFeeling.AI -->
-                <div class="timeline-item">
-                    <div class="timeline-marker">
-                        <div class="marker-dot"></div>
-                        <div class="marker-line"></div>
-                    </div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div class="company-logo">
-                                <span>WithFeeling.AI</span>
+                <div class="timeline-card" data-company="withfeeling">
+                    <div class="card-glow"></div>
+                    <div class="card-header">
+                        <div class="company-info">
+                            <div class="company-icon">
+                                <i class="fas fa-robot"></i>
                             </div>
-                            <div class="timeline-date">2025.06 - 2025.12</div>
+                            <div class="company-name">WithFeeling.AI</div>
                         </div>
-                        <h3 class="timeline-title" data-zh="AI产品实习生" data-en="AI Product Intern">AI产品实习生</h3>
-                        <div class="timeline-description">
-                            <ul>
-                                <li data-zh="<strong>Agent工作流优化：</strong>协同算法团队进行工作流重构与产品功能迭代优化，提升任务执行效率与用户操作流畅度" data-en="<strong>Agent Workflow Optimization:</strong> Collaborated with algorithm team to restructure workflows and iterate product features, improving task execution efficiency and user operation smoothness"><strong>Agent工作流优化：</strong>协同算法团队进行工作流重构与产品功能迭代优化，提升任务执行效率与用户操作流畅度</li>
-                                <li data-zh="<strong>数据看板设计：</strong>设计中心Agent数据看板，实时预测用户下一步动作，提升系统智能预测能力" data-en="<strong>Data Dashboard Design:</strong> Designed central Agent data dashboard to predict user next actions in real-time, enhancing system intelligence prediction capability"><strong>数据看板设计：</strong>设计中心Agent数据看板，实时预测用户下一步动作，提升系统智能预测能力</li>
-                                <li data-zh="<strong>Prompt优化：</strong>优化各Agent交互提示词，设计健康状态看板与交互闭环，通过种子用户验证核心链路" data-en="<strong>Prompt Optimization:</strong> Optimized interaction prompts for each Agent, designed health status dashboard and interaction loop, validated core workflows through seed users"><strong>Prompt优化：</strong>优化各Agent交互提示词，设计健康状态看板与交互闭环，通过种子用户验证核心链路</li>
-                                <li data-zh="<strong>留存提升探索：</strong>结合益智游戏探索AI对话产品的持续使用与留存提升方案" data-en="<strong>Retention Enhancement:</strong> Explored continuous usage and retention improvement strategies for AI dialogue products combined with puzzle games"><strong>留存提升探索：</strong>结合益智游戏探索AI对话产品的持续使用与留存提升方案</li>
-                            </ul>
+                        <div class="timeline-date">
+                            <span class="date-start">2025.06</span>
+                            <span class="date-separator">—</span>
+                            <span class="date-end">2025.12</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="position-title" data-zh="AI产品实习生" data-en="AI Product Intern">AI产品实习生</h3>
+                        <p class="position-summary" data-zh="Agent工作流优化、数据看板设计、Prompt调优" data-en="Agent workflow optimization, data dashboard design, Prompt tuning">
+                            Agent工作流优化、数据看板设计、Prompt调优
+                        </p>
+                        <div class="expand-hint">
+                            <span data-zh="点击查看详情" data-en="Click for details">点击查看详情</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="card-details">
+                        <div class="details-content">
+                            <div class="timeline-description">
+                                <ul>
+                                    <li data-zh="<strong>Agent工作流优化：</strong>协同算法团队进行工作流重构与产品功能迭代优化，提升任务执行效率与用户操作流畅度" data-en="<strong>Agent Workflow Optimization:</strong> Collaborated with algorithm team to restructure workflows and iterate product features, improving task execution efficiency and user operation smoothness"><strong>Agent工作流优化：</strong>协同算法团队进行工作流重构与产品功能迭代优化，提升任务执行效率与用户操作流畅度</li>
+                                    <li data-zh="<strong>数据看板设计：</strong>设计中心Agent数据看板，实时预测用户下一步动作，提升系统智能预测能力" data-en="<strong>Data Dashboard Design:</strong> Designed central Agent data dashboard to predict user next actions in real-time, enhancing system intelligence prediction capability"><strong>数据看板设计：</strong>设计中心Agent数据看板，实时预测用户下一步动作，提升系统智能预测能力</li>
+                                    <li data-zh="<strong>Prompt优化：</strong>优化各Agent交互提示词，设计健康状态看板与交互闭环，通过种子用户验证核心链路" data-en="<strong>Prompt Optimization:</strong> Optimized interaction prompts for each Agent, designed health status dashboard and interaction loop, validated core workflows through seed users"><strong>Prompt优化：</strong>优化各Agent交互提示词，设计健康状态看板与交互闭环，通过种子用户验证核心链路</li>
+                                    <li data-zh="<strong>留存提升探索：</strong>结合益智游戏探索AI对话产品的持续使用与留存提升方案" data-en="<strong>Retention Enhancement:</strong> Explored continuous usage and retention improvement strategies for AI dialogue products combined with puzzle games"><strong>留存提升探索：</strong>结合益智游戏探索AI对话产品的持续使用与留存提升方案</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label" data-zh="关于我" data-en="About Me">关于我</p>
+                <h2 class="section-title" data-zh="数据驱动的AI产品人" data-en="Data-Driven AI Product Manager">数据驱动的AI产品人</h2>
+            </div>
+            <div class="about-content">
+                <p class="about-description" data-zh="我是一名专注于AI领域的产品经理，拥有丰富的AI搜索理解、多模态应用和RAG技术实践经验。擅长通过数据分析和用户研究驱动产品迭代，在美团和WithFeeling.AI的实习经历中，主导了从模型横评到产品落地的完整工作流。" data-en="I am an AI-focused product manager with extensive experience in AI search comprehension, multimodal applications, and RAG technology. Skilled in driving product iterations through data analysis and user research, leading the complete workflow from model evaluation to product deployment during internships at Meituan and WithFeeling.AI.">
+                    我是一名专注于AI领域的产品经理，拥有丰富的AI搜索理解、多模态应用和RAG技术实践经验。擅长通过数据分析和用户研究驱动产品迭代，在美团和WithFeeling.AI的实习经历中，主导了从模型横评到产品落地的完整工作流。
+                </p>
+                <div class="about-highlight">
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h3 data-zh="AI搜索专家" data-en="AI Search Expert">AI搜索专家</h3>
+                            <p data-zh="从模型横评到多模态搜索的完整实践经验" data-en="Complete practical experience from model evaluation to multimodal search">从模型横评到多模态搜索的完整实践经验</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h3 data-zh="数据驱动决策" data-en="Data-Driven Decisions">数据驱动决策</h3>
+                            <p data-zh="通过A/B测试和数据分析优化产品策略" data-en="Optimizing product strategy through A/B testing and data analysis">通过A/B测试和数据分析优化产品策略</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="highlight-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="highlight-text">
+                            <h3 data-zh="大模型应用" data-en="LLM Applications">大模型应用</h3>
+                            <p data-zh="精通RAG、多Agent系统等前沿技术" data-en="Proficient in RAG, multi-Agent systems and other cutting-edge technologies">精通RAG、多Agent系统等前沿技术</p>
                         </div>
                     </div>
                 </div>
@@ -335,40 +439,236 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section class="education section" id="education">
+    <!-- AI Tools Section -->
+    <section class="ai-tools section" id="ai-tools">
         <div class="container">
             <div class="section-header">
-                <p class="section-label" data-zh="教育背景" data-en="Education">教育背景</p>
-                <h2 class="section-title" data-zh="学术经历" data-en="Academic Background">学术经历</h2>
+                <p class="section-label" data-zh="AI工具栈" data-en="AI Tools Stack">AI工具栈</p>
+                <h2 class="section-title" data-zh="探索与使用的AI产品" data-en="AI Products I Use">探索与使用的AI产品</h2>
             </div>
-            <div class="education-timeline">
-                <div class="education-card featured">
-                    <div class="education-badge" data-zh="在读" data-en="Current">在读</div>
-                    <div class="education-header">
-                        <div class="university-logo">
-                            <span data-zh="中国农业大学" data-en="CAU">中国农业大学</span>
+
+            <div class="ai-tools-grid">
+                <!-- Text Generation -->
+                <div class="ai-tool-category">
+                    <div class="category-header">
+                        <div class="category-icon-large">
+                            <i class="fas fa-font"></i>
                         </div>
-                        <div class="education-period">2024.09 - 2026.06</div>
+                        <h3 data-zh="文字生成" data-en="Text Generation">文字生成</h3>
+                        <p class="category-desc" data-zh="大语言模型与对话AI" data-en="LLMs & Conversational AI">大语言模型与对话AI</p>
                     </div>
-                    <h3 class="education-major" data-zh="资源利用与植物保护 | 硕士" data-en="Resource Utilization and Plant Protection | Master's">资源利用与植物保护 | 硕士</h3>
-                    <div class="education-achievement">
-                        <i class="fas fa-star"></i>
-                        <span data-zh="GPA: 3.66/4.0 (专业前5%)" data-en="GPA: 3.66/4.0 (Top 5%)">GPA: 3.66/4.0 (专业前5%)</span>
+                    <div class="tools-list">
+                        <div class="tool-item featured">
+                            <div class="tool-logo">
+                                <span class="tool-initial">G</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>ChatGPT</h4>
+                                <p data-zh="OpenAI" data-en="OpenAI">OpenAI</p>
+                            </div>
+                            <div class="tool-badge" data-zh="常用" data-en="Daily">常用</div>
+                        </div>
+                        <div class="tool-item featured">
+                            <div class="tool-logo">
+                                <span class="tool-initial">C</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Claude</h4>
+                                <p>Anthropic</p>
+                            </div>
+                            <div class="tool-badge" data-zh="常用" data-en="Daily">常用</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">K</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Kimi</h4>
+                                <p data-zh="月之暗面" data-en="Moonshot">月之暗面</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">文</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4 data-zh="文心一言" data-en="Ernie Bot">文心一言</h4>
+                                <p>Baidu</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">通</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4 data-zh="通义千问" data-en="Qwen">通义千问</h4>
+                                <p>Alibaba</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">G</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Gemini</h4>
+                                <p>Google</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="education-card">
-                    <div class="education-header">
-                        <div class="university-logo">
-                            <span data-zh="山东农业大学" data-en="SDAU">山东农业大学</span>
+
+                <!-- Image Generation -->
+                <div class="ai-tool-category">
+                    <div class="category-header">
+                        <div class="category-icon-large">
+                            <i class="fas fa-image"></i>
                         </div>
-                        <div class="education-period">2018.09 - 2022.06</div>
+                        <h3 data-zh="图片生成" data-en="Image Generation">图片生成</h3>
+                        <p class="category-desc" data-zh="AI绘画与图像创作" data-en="AI Art & Image Creation">AI绘画与图像创作</p>
                     </div>
-                    <h3 class="education-major" data-zh="土地资源管理 | 本科" data-en="Land Resource Management | Bachelor's">土地资源管理 | 本科</h3>
+                    <div class="tools-list">
+                        <div class="tool-item featured">
+                            <div class="tool-logo">
+                                <span class="tool-initial">M</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Midjourney</h4>
+                                <p data-zh="高质量AI绘画" data-en="High-Quality AI Art">高质量AI绘画</p>
+                            </div>
+                            <div class="tool-badge" data-zh="常用" data-en="Daily">常用</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">SD</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Stable Diffusion</h4>
+                                <p data-zh="开源图像生成" data-en="Open Source Gen">开源图像生成</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">D</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>DALL-E</h4>
+                                <p>OpenAI</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">堆"</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>堆友</h4>
+                                <p>阿里</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Generation -->
+                <div class="ai-tool-category">
+                    <div class="category-header">
+                        <div class="category-icon-large">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 data-zh="视频生成" data-en="Video Generation">视频生成</h3>
+                        <p class="category-desc" data-zh="AI视频创作与编辑；" data-en="AI Video Creation & Editing;">AI视频创作与编辑；</p>
+                        <p class="category-subtitle" data-zh="作品集" data-en="Portfolio">作品集</p>
+                    </div>
+                    <div class="tools-list">
+                        <div class="tool-item featured">
+                            <div class="tool-logo">
+                                <span class="tool-initial">S</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Sora</h4>
+                                <p>OpenAI</p>
+                            </div>
+                            <div class="tool-badge" data-zh="关注" data-en="Watching">关注</div>
+                        </div>
+                        <div class="tool-item featured">
+                            <div class="tool-logo">
+                                <span class="tool-initial">R</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Runway</h4>
+                                <p data-zh="AI视频编辑" data-en="AI Video Editing">AI视频编辑</p>
+                            </div>
+                            <div class="tool-badge" data-zh="常用" data-en="Daily">常用</div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">P</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>Pika</h4>
+                                <p data-zh="文生视频" data-en="Text-to-Video">文生视频</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">H</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4>HeyGen</h4>
+                                <p data-zh="数字人视频" data-en="Avatar Video">数字人视频</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">可"</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4 data-zh="可灵AI" data-en="Kling AI">可灵AI</h4>
+                                <p>快手</p>
+                            </div>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-logo">
+                                <span class="tool-initial">即"</span>
+                            </div>
+                            <div class="tool-info">
+                                <h4 data-zh="即梦AI" data-en="Jimeng AI">即梦AI</h4>
+                                <p>字节</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Aquarium Modal -->
+    <div class="aquarium-modal" id="aquariumModal">
+        <div class="aquarium-container">
+            <div class="aquarium-header">
+                <h2 data-zh="我的水族馆" data-en="My Aquarium">我的水族馆</h2>
+                <button class="close-btn" id="closeAquariumBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="aquarium-stats">
+                <div class="aquarium-stat">
+                    <span data-zh="收集" data-en="Collected">收集</span>
+                    <span class="count" id="aquariumCount">0</span>
+                    <span data-zh="种" data-en="species">种</span>
+                </div>
+                <div class="aquarium-stat">
+                    <span data-zh="总计" data-en="Total">总计</span>
+                    <span class="count" id="aquariumTotal">0</span>
+                    <span data-zh="条" data-en="fish">条</span>
+                </div>
+            </div>
+            <div class="aquarium-content" id="aquariumContent">
+                <div class="empty-aquarium" id="emptyAquarium">
+                    <i class="fas fa-water"></i>
+                    <p data-zh="水族馆是空的，快去钓鱼吧！" data-en="Aquarium is empty, go fishing!">水族馆是空的，快去钓鱼吧！</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Contact Section -->
     <section class="contact section" id="contact">
@@ -445,10 +745,57 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Gan Erkang. <span data-zh="保留所有权利" data-en="All rights reserved">保留所有权利</span></p>
+                <p>&copy; 2025 葛尔康. <span data-zh="保留所有权利" data-en="All rights reserved">保留所有权利</span></p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating Fishing Game -->
+    <div class="floating-fishing" id="floatingFishing">
+        <div class="fishing-toggle" id="fishingToggle">
+            <i class="fas fa-fish"></i>
+        </div>
+        <div class="fishing-label">
+            <span data-zh="钓鱼时刻" data-en="Fishing Time">钓鱼时刻</span>
+        </div>
+        <div class="mini-fishing-game" id="miniFishingGame">
+            <div class="mini-fishing-header">
+                <span data-zh="钓鱼时刻" data-en="Fishing Time">钓鱼时刻</span>
+                <button class="fishing-close" id="fishingClose">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            <div class="mini-ocean">
+                <div class="ocean-surface"></div>
+                <div class="mini-fisherman">🎣</div>
+                <div class="mini-swimming-fishes" id="swimmingFishes"></div>
+                <div class="mini-caught-fish" id="caughtFish"></div>
+            </div>
+            <div class="mini-power-control">
+                <div class="wheel-container" id="wheelContainer">
+                    <canvas id="powerWheel" width="120" height="120"></canvas>
+                    <div class="mini-wheel-pointer"></div>
+                    <div class="click-reminder" id="clickReminder">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span data-zh="点击！" data-en="Click!">点击！</span>
+                    </div>
+                </div>
+                <div class="mini-power-indicator">
+                    <span class="mini-power-value" id="powerValue">0</span>
+                </div>
+            </div>
+            <div class="fishing-stats">
+                <div class="fishing-stat">
+                    <i class="fas fa-trophy"></i>
+                    <span id="totalCatches">0</span>
+                </div>
+                <div class="fishing-stat">
+                    <i class="fas fa-percentage"></i>
+                    <span id="successRate">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
