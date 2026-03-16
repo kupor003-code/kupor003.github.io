@@ -25,12 +25,13 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <div class="nav-brand">GK</div>
+            <div class="nav-brand">Kupor</div>
             <ul class="nav-menu">
                 <li><a href="#education" data-zh="教育" data-en="Education">教育</a></li>
                 <li><a href="#experience" data-zh="经历" data-en="Experience">经历</a></li>
                 <li><a href="#about" data-zh="关于" data-en="About">关于</a></li>
                 <li><a href="#skills" data-zh="技能" data-en="Skills">技能</a></li>
+                <li><a href="#projects" data-zh="项目" data-en="Projects">项目</a></li>
                 <li><a href="#ai-tools" data-zh="AI工具" data-en="AI Tools">AI工具</a></li>
                 <li><a href="#contact" data-zh="联系" data-en="Contact">联系</a></li>
             </ul>
@@ -108,6 +109,48 @@
         <div class="scroll-indicator">
             <span data-zh="向下滚动" data-en="Scroll Down">向下滚动</span>
             <div class="scroll-arrow"></div>
+        </div>
+
+        <!-- Floating AI Chat Widget -->
+        <div class="floating-chat-widget" id="floatingChatWidget">
+            <div class="chat-widget-header" id="chatWidgetHeader">
+                <div class="widget-title">
+                    <i class="fas fa-robot"></i>
+                    <span data-zh="AI问答" data-en="AI Chat">AI问答</span>
+                </div>
+                <div class="widget-controls">
+                    <button class="widget-btn" id="minimizeChat" title="最小化">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button class="widget-btn" id="closeChat" title="关闭">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-widget-body" id="chatWidgetBody">
+                <div class="widget-messages" id="widgetMessages">
+                    <div class="widget-welcome">
+                        <i class="fas fa-sparkles"></i>
+                        <p data-zh="嗨！我可以基于葛尔康的简历回答你的问题" data-en="Hi! I can answer questions about Ge Erkang's resume">嗨！我可以基于葛尔康的简历回答你的问题</p>
+                    </div>
+                </div>
+
+                <div class="widget-input-area">
+                    <input type="text" id="widgetChatInput" class="widget-input"
+                           data-zh-placeholder="问我任何问题..." data-en-placeholder="Ask me anything..."
+                           placeholder="问我任何问题...">
+                    <button id="widgetSendBtn" class="widget-send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+
+                <div class="widget-quick-questions" id="quickQuestions">
+                    <span class="quick-question" data-zh="你的技能？" data-en="Your skills?">你的技能？</span>
+                    <span class="quick-question" data-zh="工作经验" data-en="Experience">工作经验</span>
+                    <span class="quick-question" data-zh="联系方式" data-en="Contact">联系方式</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -397,6 +440,223 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label" data-zh="个人项目" data-en="Personal Projects">个人项目</p>
+                <h2 class="section-title" data-zh="我的AI视频创作平台" data-en="My AI Video Creation Platform">我的AI视频创作平台</h2>
+            </div>
+
+            <!-- Project Hero Card -->
+            <div class="project-hero-card">
+                <div class="project-glow"></div>
+                <div class="project-header">
+                    <div class="project-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="project-title-group">
+                        <h3 class="project-title" data-zh="AI视频创作平台" data-en="AI Video Creation Platform">AI视频创作平台</h3>
+                        <p class="project-subtitle" data-zh="智能剧本解析 · 自动分镜生成 · AI视频合成" data-en="Smart Script Analysis · Auto Storyboard · AI Video Synthesis">智能剧本解析 · 自动分镜生成 · AI视频合成</p>
+                    </div>
+                    <a href="https://github.com/kupor003-code/kuku-aivideo" target="_blank" class="project-github-link">
+                        <i class="fab fa-github"></i>
+                        <span data-zh="查看源码" data-en="View Source">查看源码</span>
+                    </a>
+                </div>
+
+                <div class="project-description">
+                    <p data-zh="一个基于AI的端到端视频创作工具，通过自然语言剧本自动生成分镜、图片和视频。集成了阿里云通义万相、豆包Seedance等AI服务，实现了从剧本到成片的完整创作链路。" data-en="An AI-powered end-to-end video creation tool that automatically generates storyboards, images, and videos from natural language scripts. Integrated with Alibaba Wanxiang, Doubao Seedance, and other AI services to achieve a complete creation pipeline from script to final video.">
+                        一个基于AI的端到端视频创作工具，通过自然语言剧本自动生成分镜、图片和视频。集成了阿里云通义万相、豆包Seedance等AI服务，实现了从剧本到成片的完整创作链路。
+                    </p>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="project-tech-stack">
+                    <h4 data-zh="技术栈" data-en="Tech Stack">技术栈</h4>
+                    <div class="tech-tags">
+                        <div class="tech-category">
+                            <span class="tech-category-label" data-zh="前端" data-en="Frontend">前端</span>
+                            <div class="tech-items">
+                                <span class="tech-tag">React 19</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Vite</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <span class="tech-category-label" data-zh="后端" data-en="Backend">后端</span>
+                            <div class="tech-items">
+                                <span class="tech-tag">FastAPI</span>
+                                <span class="tech-tag">SQLAlchemy</span>
+                                <span class="tech-tag">SQLite</span>
+                            </div>
+                        </div>
+                        <div class="tech-category">
+                            <span class="tech-category-label" data-zh="AI服务" data-en="AI Services">AI服务</span>
+                            <div class="tech-items">
+                                <span class="tech-tag">通义万相</span>
+                                <span class="tech-tag">豆包Seedance</span>
+                                <span class="tech-tag">智谱AI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Features -->
+                <div class="project-features">
+                    <h4 data-zh="核心功能" data-en="Core Features">核心功能</h4>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-theater-masks"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5 data-zh="智能剧本解析" data-en="Smart Script Analysis">智能剧本解析</h5>
+                                <p data-zh="AI自动将剧本转换为结构化分镜" data-en="AI automatically converts scripts into structured storyboards">AI自动将剧本转换为结构化分镜</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-image"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5 data-zh="AI图片生成" data-en="AI Image Generation">AI图片生成</h5>
+                                <p data-zh="集成阿里云通义万相生成分镜图片" data-en="Integrated with Alibaba Wanxiang for storyboard image generation">集成阿里云通义万相生成分镜图片</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-film"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5 data-zh="AI视频生成" data-en="AI Video Generation">AI视频生成</h5>
+                                <p data-zh="豆包Seedance 1.5 Pro图生视频" data-en="Doubao Seedance 1.5 Pro for image-to-video">豆包Seedance 1.5 Pro图生视频</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5 data-zh="本地持久化" data-en="Local Persistence">本地持久化</h5>
+                                <p data-zh="SQLite数据库自动保存创作进度" data-en="SQLite database automatically saves creation progress">SQLite数据库自动保存创作进度</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5 data-zh="可视化编辑" data-en="Visual Editor">可视化编辑</h5>
+                                <p data-zh="直观的节点式工作流编辑器" data-en="Intuitive node-based workflow editor">直观的节点式工作流编辑器</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5 data-zh="演示案例系统" data-en="Demo Case System">演示案例系统</h5>
+                                <p data-zh="保存真实作品为演示案例" data-en="Save real generated works as demo cases">保存真实作品为演示案例</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demo Cases Section -->
+            <div class="demo-cases-section">
+                <div class="demo-cases-header">
+                    <h3 data-zh="演示案例" data-en="Demo Cases">演示案例</h3>
+                    <p data-zh="真实生成的视频作品展示" data-en="Real generated video works showcase">真实生成的视频作品展示</p>
+                </div>
+
+                <div class="demo-cases-grid">
+                    <!-- Demo Case 1 -->
+                    <div class="demo-case-card">
+                        <div class="demo-video-container">
+                            <video class="demo-video" controls poster="https://raw.githubusercontent.com/kupor003-code/kuku-aivideo/main/backend/static/demo-cases/fragment_1_image.jpg">
+                                <source src="https://raw.githubusercontent.com/kupor003-code/kuku-aivideo/main/backend/static/demo-cases/fragment_1_video.mp4" type="video/mp4">
+                                <span data-zh="您的浏览器不支持视频播放" data-en="Your browser does not support video playback">您的浏览器不支持视频播放</span>
+                            </video>
+                            <div class="demo-overlay">
+                                <div class="demo-overlay-content">
+                                    <i class="fas fa-play-circle"></i>
+                                    <span data-zh="分镜 1" data-en="Shot 1">分镜 1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-info">
+                            <h4 data-zh="开场场景" data-en="Opening Scene">开场场景</h4>
+                            <p data-zh="AI生成的开场分镜，展示故事开端" data-en="AI-generated opening storyboard, showing the beginning of the story">AI生成的开场分镜，展示故事开端</p>
+                        </div>
+                    </div>
+
+                    <!-- Demo Case 2 -->
+                    <div class="demo-case-card">
+                        <div class="demo-video-container">
+                            <video class="demo-video" controls poster="https://raw.githubusercontent.com/kupor003-code/kuku-aivideo/main/backend/static/demo-cases/fragment_2_image.jpg">
+                                <source src="https://raw.githubusercontent.com/kupor003-code/kuku-aivideo/main/backend/static/demo-cases/fragment_2_video.mp4" type="video/mp4">
+                                <span data-zh="您的浏览器不支持视频播放" data-en="Your browser does not support video playback">您的浏览器不支持视频播放</span>
+                            </video>
+                            <div class="demo-overlay">
+                                <div class="demo-overlay-content">
+                                    <i class="fas fa-play-circle"></i>
+                                    <span data-zh="分镜 2" data-en="Shot 2">分镜 2</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-info">
+                            <h4 data-zh="故事发展" data-en="Story Development">故事发展</h4>
+                            <p data-zh="剧情推进的关键场景视频" data-en="Key scene video for plot progression">剧情推进的关键场景视频</p>
+                        </div>
+                    </div>
+
+                    <!-- Demo Case 3 -->
+                    <div class="demo-case-card">
+                        <div class="demo-video-container">
+                            <video class="demo-video" controls poster="https://raw.githubusercontent.com/kupor003-code/kuku-aivideo/main/backend/static/demo-cases/fragment_3_image.jpg">
+                                <source src="https://raw.githubusercontent.com/kupor003-code/kuku-aivideo/main/backend/static/demo-cases/fragment_3_video.mp4" type="video/mp4">
+                                <span data-zh="您的浏览器不支持视频播放" data-en="Your browser does not support video playback">您的浏览器不支持视频播放</span>
+                            </div>
+                            <div class="demo-overlay">
+                                <div class="demo-overlay-content">
+                                    <i class="fas fa-play-circle"></i>
+                                    <span data-zh="分镜 3" data-en="Shot 3">分镜 3</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="demo-info">
+                            <h4 data-zh="高潮场景" data-en="Climax Scene">高潮场景</h4>
+                            <p data-zh="故事高潮部分的精彩演绎" data-en="Brilliant interpretation of story climax">故事高潮部分的精彩演绎</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demo Cases Note -->
+                <div class="demo-cases-note">
+                    <i class="fas fa-info-circle"></i>
+                    <p data-zn="以上视频均由本平台AI服务自动生成，展示了从剧本到成片的完整创作流程" data-en="The above videos are automatically generated by the platform's AI services, demonstrating the complete creation pipeline from script to final video">
+                        以上视频均由本平台AI服务自动生成，展示了从剧本到成片的完整创作流程
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project Links -->
+            <div class="project-links">
+                <a href="https://github.com/kupor003-code/kuku-aivideo" target="_blank" class="project-link-btn primary">
+                    <i class="fab fa-github"></i>
+                    <span data-zh="GitHub 仓库" data-en="GitHub Repository">GitHub 仓库</span>
+                    <i class="fas fa-external-link-alt link-icon"></i>
+                </a>
+                <a href="https://github.com/kupor003-code/kuku-aivideo/stargazers" target="_blank" class="project-link-btn secondary">
+                    <i class="fas fa-star"></i>
+                    <span data-zn="给项目点星" data-en="Star the Project">给项目点星</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- AI Tools Section -->
     <section class="ai-tools section" id="ai-tools">
         <div class="container">
@@ -532,7 +792,8 @@
                             <i class="fas fa-video"></i>
                         </div>
                         <h3 data-zh="视频生成" data-en="Video Generation">视频生成</h3>
-                        <p class="category-desc" data-zh="AI视频创作与编辑" data-en="AI Video Creation & Editing">AI视频创作与编辑</p>
+                        <p class="category-desc" data-zh="AI视频创作与编辑；" data-en="AI Video Creation & Editing;">AI视频创作与编辑；</p>
+                        <p class="category-subtitle" data-zh="作品集" data-en="Portfolio">作品集</p>
                     </div>
                     <div class="tools-list">
                         <div class="tool-item featured">
@@ -594,128 +855,38 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- 作品集展示区域 -->
-            <div class="portfolio-showcase">
-                <div class="showcase-header">
-                    <h3 data-zh="我的作品集" data-en="My Portfolio">我的作品集</h3>
-                    <p data-zh="AI创作的文字、图片与视频作品" data-en="AI-created text, images & videos">AI创作的文字、图片与视频作品</p>
+    <!-- Aquarium Modal -->
+    <div class="aquarium-modal" id="aquariumModal">
+        <div class="aquarium-container">
+            <div class="aquarium-header">
+                <h2 data-zh="我的水族馆" data-en="My Aquarium">我的水族馆</h2>
+                <button class="close-btn" id="closeAquariumBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="aquarium-stats">
+                <div class="aquarium-stat">
+                    <span data-zh="收集" data-en="Collected">收集</span>
+                    <span class="count" id="aquariumCount">0</span>
+                    <span data-zh="种" data-en="species">种</span>
                 </div>
-
-                <!-- 作品网格 -->
-                <div class="portfolio-grid">
-                    <!-- 作品1 - H5小游戏模板（iframe直接嵌入） -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <!-- TODO: 替换为你的H5小游戏 -->
-                            <!-- 使用方法：将下面的注释替换为 iframe 代码 -->
-                            <!-- 示例：<iframe src="https://你的游戏网站.com" frameborder="0" allowfullscreen></iframe> -->
-
-                            <div class="game-placeholder">
-                                <i class="fas fa-gamepad"></i>
-                                <span data-zh="H5小游戏区域" data-en="H5 Game Area">H5小游戏区域</span>
-                                <small data-zh="支持iframe嵌入" data-en="Supports iframe embed">支持iframe嵌入</small>
-                            </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-tag" data-zh="小游戏" data-en="Game">小游戏</span>
-                            <h4 data-zh="游戏标题" data-en="Game Title">游戏标题</h4>
-                            <p data-zh="游戏描述" data-en="Game description">游戏描述</p>
-                        </div>
-                    </div>
-
-                    <!-- 作品2 - AI产品/网页应用模板（截图+可点击链接） -->
-                    <div class="portfolio-item clickable-portfolio">
-                        <div class="portfolio-image">
-                            <!-- TODO: 替换为你的AI产品 -->
-                            <!-- 使用方法：将整个div替换为下面的代码 -->
-                            <!--
-                            <a href="https://你的产品网址.com" target="_blank" class="portfolio-link">
-                                <img src="产品截图.jpg" alt="产品界面">
-                                <div class="link-overlay">
-                                    <span data-zh="点击体验 →" data-en="Try it →">点击体验 →</span>
-                                </div>
-                            </a>
-                            -->
-
-                            <div class="product-placeholder">
-                                <i class="fas fa-laptop-code"></i>
-                                <span data-zh="AI产品区域" data-en="AI Product Area">AI产品区域</span>
-                                <small data-zh="截图+外链" data-en="Screenshot + Link">截图+外链</small>
-                            </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-tag" data-zh="AI产品" data-en="AI Product">AI产品</span>
-                            <h4 data-zh="产品名称" data-en="Product Name">产品名称</h4>
-                            <p data-zh="产品描述" data-en="Product description">产品描述</p>
-                        </div>
-                    </div>
-
-                    <!-- 作品3 - GitHub项目模板（截图+GitHub链接+Star） -->
-                    <div class="portfolio-item github-project">
-                        <div class="portfolio-image">
-                            <!-- TODO: 替换为你的GitHub项目 -->
-                            <!-- 使用方法：将整个div替换为下面的代码 -->
-                            <!--
-                            <a href="https://github.com/你的用户名/项目名" target="_blank" class="portfolio-link">
-                                <img src="项目截图.jpg" alt="项目预览">
-                                <div class="github-overlay">
-                                    <i class="fab fa-github"></i>
-                                    <span data-zh="查看项目 →" data-en="View Project →">查看项目 →</span>
-                                </div>
-                            </a>
-                            -->
-
-                            <div class="github-placeholder">
-                                <i class="fab fa-github"></i>
-                                <span data-zh="GitHub项目区域" data-en="GitHub Project">GitHub项目区域</span>
-                                <small data-zh="开源代码展示" data-en="Open Source">开源代码展示</small>
-                            </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-tag" data-zh="GitHub" data-en="GitHub">GitHub</span>
-                            <h4 data-zh="项目名称" data-en="Project Name">项目名称</h4>
-                            <p data-zh="项目描述" data-en="Project description">项目描述</p>
-                        </div>
-                    </div>
-
-                    <!-- 作品4 - 产品演示视频模板（B站/YouTube等） -->
-                    <div class="portfolio-item">
-                        <div class="portfolio-image">
-                            <!-- TODO: 替换为你的演示视频 -->
-                            <!-- 使用方法：将下面的注释替换为 iframe 代码 -->
-                            <!--
-                            B站示例：
-                            <iframe src="https://player.bilibili.com/player.html?bvid=你的BV号&page=1"
-                                    scrolling="no" border="0" frameborder="no"
-                                    framespacing="0" allowfullscreen>
-                            </iframe>
-
-                            YouTube示例：
-                            <iframe src="https://www.youtube.com/embed/你的视频ID"
-                                    frameborder="0" allowfullscreen>
-                            </iframe>
-
-                            本地视频：
-                            <video src="演示视频.mp4" poster="封面图.jpg" controls></video>
-                            -->
-
-                            <div class="video-placeholder">
-                                <i class="fas fa-play-circle"></i>
-                                <span data-zh="演示视频区域" data-en="Demo Video">演示视频区域</span>
-                                <small data-zh="支持B站/YouTube/本地视频" data-en="Bilibili/YouTube/Local">支持B站/YouTube/本地视频</small>
-                            </div>
-                        </div>
-                        <div class="portfolio-info">
-                            <span class="portfolio-tag" data-zh="产品演示" data-en="Demo">产品演示</span>
-                            <h4 data-zh="演示标题" data-en="Demo Title">演示标题</h4>
-                            <p data-zh="演示描述" data-en="Demo description">演示描述</p>
-                        </div>
-                    </div>
+                <div class="aquarium-stat">
+                    <span data-zh="总计" data-en="Total">总计</span>
+                    <span class="count" id="aquariumTotal">0</span>
+                    <span data-zh="条" data-en="fish">条</span>
+                </div>
+            </div>
+            <div class="aquarium-content" id="aquariumContent">
+                <div class="empty-aquarium" id="emptyAquarium">
+                    <i class="fas fa-water"></i>
+                    <p data-zh="水族馆是空的，快去钓鱼吧！" data-en="Aquarium is empty, go fishing!">水族馆是空的，快去钓鱼吧！</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Contact Section -->
     <section class="contact section" id="contact">
@@ -775,7 +946,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <span class="footer-logo">GK</span>
+                    <span class="footer-logo">Kupor</span>
                     <p data-zh="AI产品经理" data-en="AI Product Manager">AI产品经理</p>
                 </div>
                 <div class="footer-social">
@@ -796,6 +967,53 @@
             </div>
         </div>
     </footer>
+
+    <!-- Floating Fishing Game -->
+    <div class="floating-fishing" id="floatingFishing">
+        <div class="fishing-toggle" id="fishingToggle">
+            <i class="fas fa-fish"></i>
+        </div>
+        <div class="fishing-label">
+            <span data-zh="钓鱼时刻" data-en="Fishing Time">钓鱼时刻</span>
+        </div>
+        <div class="mini-fishing-game" id="miniFishingGame">
+            <div class="mini-fishing-header">
+                <span data-zh="钓鱼时刻" data-en="Fishing Time">钓鱼时刻</span>
+                <button class="fishing-close" id="fishingClose">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            <div class="mini-ocean">
+                <div class="ocean-surface"></div>
+                <div class="mini-fisherman">🎣</div>
+                <div class="mini-swimming-fishes" id="swimmingFishes"></div>
+                <div class="mini-caught-fish" id="caughtFish"></div>
+            </div>
+            <div class="mini-power-control">
+                <div class="wheel-container" id="wheelContainer">
+                    <canvas id="powerWheel" width="120" height="120"></canvas>
+                    <div class="mini-wheel-pointer"></div>
+                    <div class="click-reminder" id="clickReminder">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span data-zh="点击！" data-en="Click!">点击！</span>
+                    </div>
+                </div>
+                <div class="mini-power-indicator">
+                    <span class="mini-power-value" id="powerValue">0</span>
+                </div>
+            </div>
+            <div class="fishing-stats">
+                <div class="fishing-stat">
+                    <i class="fas fa-trophy"></i>
+                    <span id="totalCatches">0</span>
+                </div>
+                <div class="fishing-stat">
+                    <i class="fas fa-percentage"></i>
+                    <span id="successRate">0%</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
